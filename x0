@@ -2,24 +2,22 @@
 
 <script>
 
-var hod = 1;
+let hod = 'x';
 function change(event, field) {
 
 	if (event.keyCode == 32)
 	{
-		if (hod == 1) {
-		document.getElementById(field.id).value = "x";
-		hod = 2;
-		document.getElementById("min").innerHTML = "o";
+		if (hod == 'x') {
+		document.getElementById(field.id).value = hod;
+		hod = 'o';
+		document.getElementById("min").innerHTML = hod;
 		}
-		else if (hod == 2) {
-		document.getElementById(field.id).value = "o";
-		hod = 1;
-		document.getElementById("min").innerHTML = "x";
+		else if (hod == 'o') {
+		document.getElementById(field.id).value = hod;
+		hod = 'x';
+		document.getElementById("min").innerHTML = hod;
 		}
 	}
-
-
 
 	console.log(hod);
 } 
