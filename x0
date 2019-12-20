@@ -1,0 +1,43 @@
+<div id="game">
+
+<script>
+
+var hod = 1;
+function change(event, field) {
+
+	if (event.keyCode == 32)
+	{
+		if (hod == 1) {
+		document.getElementById(field.id).value = "x";
+		hod = 2;
+		document.getElementById("min").innerHTML = "o";
+		}
+		else if (hod == 2) {
+		document.getElementById(field.id).value = "o";
+		hod = 1;
+		document.getElementById("min").innerHTML = "x";
+		}
+	}
+
+
+
+	console.log(hod);
+} 
+</script>
+
+<input id = "1" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<input id = "2" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<input id = "3" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<br>
+<input id = "4" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<input id = "5" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<input id = "6" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<br>
+<input id = "7" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<input id = "8" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<input id = "9" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+
+<h1 id="Hodit">Ходит <div id="min"> x </div> </h1>  
+</div>
+
+
