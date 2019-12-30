@@ -1,0 +1,133 @@
+<div id="game">
+
+<script>
+
+let hod = 'x';
+
+let thod = hod;
+function change(event, field) {
+
+	if (event.keyCode == 32)
+	{
+		if (hod == 'x') {
+		document.getElementById(field.id).value = hod;
+		hod = 'o';
+		document.getElementById("min").innerHTML = hod;
+		}
+		else if (hod == 'o') {
+		document.getElementById(field.id).value = hod;
+		hod = 'x';
+		document.getElementById("min").innerHTML = hod;
+		}
+	}
+	
+	//Горизонтально
+	if ((document.getElementById('1').value == document.getElementById('2').value) && (document.getElementById('1').value == document.getElementById('3').value) && document.getElementById('1').value != '' && document.getElementById('2').value != '' && document.getElementById('3').value != '')
+	{
+		document.getElementById("1").style.backgroundColor = "#00FF00";
+		document.getElementById("2").style.backgroundColor = "#00FF00";
+		document.getElementById("3").style.backgroundColor = "#00FF00";
+	} 
+	
+	if ((document.getElementById('4').value == document.getElementById('5').value) && (document.getElementById('4').value == document.getElementById('6').value) && document.getElementById('4').value != '' && document.getElementById('5').value != '' && document.getElementById('6').value != '')
+	{
+		document.getElementById("4").style.backgroundColor = "#00FF00";
+		document.getElementById("5").style.backgroundColor = "#00FF00";
+		document.getElementById("6").style.backgroundColor = "#00FF00";
+		
+	} 
+	
+	if ((document.getElementById('7').value == document.getElementById('8').value) && (document.getElementById('7').value == document.getElementById('8').value) && document.getElementById('7').value != '' && document.getElementById('8').value != '' && document.getElementById('9').value != '')
+	{
+		document.getElementById("7").style.backgroundColor = "#00FF00";
+		document.getElementById("8").style.backgroundColor = "#00FF00";
+		document.getElementById("9").style.backgroundColor = "#00FF00";
+		
+	} 
+	
+	//Вертикально
+	if ((document.getElementById('1').value == document.getElementById('4').value) && (document.getElementById('1').value == document.getElementById('7').value) && document.getElementById('1').value != '' && document.getElementById('4').value != '' && document.getElementById('7').value != '')
+	{
+		document.getElementById("1").style.backgroundColor = "#00FF00";
+		document.getElementById("4").style.backgroundColor = "#00FF00";
+		document.getElementById("7").style.backgroundColor = "#00FF00";
+		
+	} 
+	
+	if ((document.getElementById('2').value == document.getElementById('5').value) && (document.getElementById('2').value == document.getElementById('8').value) && document.getElementById('2').value != '' && document.getElementById('5').value != '' && document.getElementById('8').value != '')
+	{
+		document.getElementById("2").style.backgroundColor = "#00FF00";
+		document.getElementById("5").style.backgroundColor = "#00FF00";
+		document.getElementById("8").style.backgroundColor = "#00FF00";
+		
+	} 
+	
+	if ((document.getElementById('3').value == document.getElementById('6').value) && (document.getElementById('3').value == document.getElementById('9').value) && document.getElementById('3').value != '' && document.getElementById('6').value != '' && document.getElementById('9').value != '')
+	{
+		document.getElementById("3").style.backgroundColor = "#00FF00";
+		document.getElementById("6").style.backgroundColor = "#00FF00";
+		document.getElementById("9").style.backgroundColor = "#00FF00";
+		
+	} 
+	
+	//Крест
+	if ((document.getElementById('1').value == document.getElementById('5').value) && (document.getElementById('1').value == document.getElementById('9').value) && document.getElementById('1').value != '' && document.getElementById('5').value != '' && document.getElementById('9').value != '')
+	{
+		document.getElementById("1").style.backgroundColor = "#00FF00";
+		document.getElementById("5").style.backgroundColor = "#00FF00";
+		document.getElementById("9").style.backgroundColor = "#00FF00";
+		
+	} 
+	if ((document.getElementById('3').value == document.getElementById('5').value) && (document.getElementById('3').value == document.getElementById('7').value) && document.getElementById('3').value != '' && document.getElementById('5').value != '' && document.getElementById('7').value != '')
+	{
+		document.getElementById("3").style.backgroundColor = "#00FF00";
+		document.getElementById("5").style.backgroundColor = "#00FF00";
+		document.getElementById("7").style.backgroundColor = "#00FF00";
+		
+	} 
+	
+	
+	console.log(hod);
+} 
+</script>
+
+<input id = "1" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<input id = "2" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<input id = "3" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<br>
+<input id = "4" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<input id = "5" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<input id = "6" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<br>
+<input id = "7" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<input id = "8" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<input id = "9" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+
+<h1 id="Hodit">Ходит <div id="min"> x </div> </h1>  
+
+<input id="elem" type="button" value="Начать сначала!">
+<script>
+  elem.onclick = function() {
+    document.getElementById("1").style.backgroundColor = "#F0E68C";
+	document.getElementById("2").style.backgroundColor = "#F0E68C";
+	document.getElementById("3").style.backgroundColor = "#F0E68C";
+	document.getElementById("4").style.backgroundColor = "#F0E68C";
+	document.getElementById("5").style.backgroundColor = "#F0E68C";
+	document.getElementById("6").style.backgroundColor = "#F0E68C";
+	document.getElementById("7").style.backgroundColor = "#F0E68C";
+	document.getElementById("8").style.backgroundColor = "#F0E68C";
+	document.getElementById("9").style.backgroundColor = "#F0E68C";
+	document.getElementById("1").value = ' ';
+	document.getElementById("2").value = ' ';
+	document.getElementById("3").value = ' ';
+	document.getElementById("4").value = ' ';
+	document.getElementById("5").value = ' ';
+	document.getElementById("6").value = ' ';
+	document.getElementById("7").value = ' ';
+	document.getElementById("8").value = ' ';
+	document.getElementById("9").value = ' ';
+  };
+</script>
+</div>
+
+
