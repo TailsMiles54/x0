@@ -1,0 +1,60 @@
+.hoded{
+  font-size: 24px;
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+}
+
+.hod2{
+  font-size: 64px;
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.tablic{
+    width: 26%;
+    max-width: 500;
+    margin: 0 auto;
+    text-align: center;
+    background-image: linear-gradient(blue, white);
+}
+
+.tab_em{
+  padding: 15px 1px;
+  font-size: 32px;
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+}
+
+.btn{
+  position: absolute;
+  right: 46%;
+  width: 8%;
+  height: 6%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+  text-align: center;
+  border-radius: 40%;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1), 0 3px 10px 0 rgba(0,0,0,0.19);
+
+  display: inline-block;
+	vertical-align: top;
+	padding: 8px 30px;
+
+	border: 3px solid #333;
+
+	font-size: 14px;
+	font-weight: 700;
+  font-family: 'Pacifico', cursive;
+	color: #333;
+	text-transform: uppercase;
+	text-decoration: none;
+  background-image: linear-gradient(white, blue);
+}
+
+.btn:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}

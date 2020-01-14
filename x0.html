@@ -1,161 +1,25 @@
-<div id="game">
+<!DOCTYPE html>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="style.css">
 
-<script>
+<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap&subset=latin-ext" rel="stylesheet">
+<script src="main.js" charset="utf-8"></script>
 
-var arr = [1,2,3,4,5,6,7,8,9];
-
-let hod = 'o';
-
-function change(event, field) {
-	let i = 1;
-	
-	if (event.keyCode == 32)
-	{
-		if (hod == 'o') {
-		document.getElementById(field.id).value = hod;
-		hod = 'x';
-		document.getElementById("min").innerHTML = hod;	
-		console.log(hod);
-		if (document.getElementById("min").innerHTML == 'o') {
-		      check();
-		}
-		}
-	}
-	
-	
-	while(i<5)
-	{
-		var rand = Math.floor(Math.random() * arr.length);
-		if (document.getElementById(arr[rand]).value == (''))
-		{
-		console.log(hod);
-		document.getElementById(arr[rand]).value = hod;
-		hod = 'o';
-		document.getElementById("min").innerHTML = hod;
-		i = 5;
-		check();
-		}
-	}
-} 
-</script>
-
-<input id = "1" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
-<input id = "2" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
-<input id = "3" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<div class="tablic">
+<input class="tab_em" id = "1" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<input class="tab_em" id = "2" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<input class="tab_em" id = "3" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
 <br>
-<input id = "4" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
-<input id = "5" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
-<input id = "6" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<input class="tab_em" id = "4" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<input class="tab_em" id = "5" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<input class="tab_em" id = "6" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
 <br>
-<input id = "7" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
-<input id = "8" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
-<input id = "9" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
-
-<h1 id="Hodit">Ходит <div id="min"> o </div> </h1>  
-
-<input id="elem" type="button" value="Начать сначала!" onclick="restart()">
-
-<script>
-	function restart() {
-    document.getElementById("1").style.backgroundColor = "#F0E68C";
-	document.getElementById("2").style.backgroundColor = "#F0E68C";
-	document.getElementById("3").style.backgroundColor = "#F0E68C";
-	document.getElementById("4").style.backgroundColor = "#F0E68C";
-	document.getElementById("5").style.backgroundColor = "#F0E68C";
-	document.getElementById("6").style.backgroundColor = "#F0E68C";
-	document.getElementById("7").style.backgroundColor = "#F0E68C";
-	document.getElementById("8").style.backgroundColor = "#F0E68C";
-	document.getElementById("9").style.backgroundColor = "#F0E68C";
-	document.getElementById("1").value = '';
-	document.getElementById("2").value = '';
-	document.getElementById("3").value = '';
-	document.getElementById("4").value = '';
-	document.getElementById("5").value = '';
-	document.getElementById("6").value = '';
-	document.getElementById("7").value = '';
-	document.getElementById("8").value = '';
-	document.getElementById("9").value = '';
-  };
-  
-  function check()
-  {
-  //Горизонтально
-	if ((document.getElementById('1').value == document.getElementById('2').value) && (document.getElementById('1').value == document.getElementById('3').value) && document.getElementById('1').value != '' && document.getElementById('2').value != '' && document.getElementById('3').value != '')
-	{
-		document.getElementById("1").style.backgroundColor = "#00FF00";
-		document.getElementById("2").style.backgroundColor = "#00FF00";
-		document.getElementById("3").style.backgroundColor = "#00FF00";
-		restart();
-		console.log ('win ' + hod);
-	} 
-	
-	if ((document.getElementById('4').value == document.getElementById('5').value) && (document.getElementById('4').value == document.getElementById('6').value) && document.getElementById('4').value != '' && document.getElementById('5').value != '' && document.getElementById('6').value != '')
-	{
-		document.getElementById("4").style.backgroundColor = "#00FF00";
-		document.getElementById("5").style.backgroundColor = "#00FF00";
-		document.getElementById("6").style.backgroundColor = "#00FF00";
-		restart();
-		result = confirm('qwerty');
-	} 
-	
-	if ((document.getElementById('7').value == document.getElementById('8').value) && (document.getElementById('7').value == document.getElementById('8').value) && document.getElementById('7').value != '' && document.getElementById('8').value != '' && document.getElementById('9').value != '')
-	{
-		document.getElementById("7").style.backgroundColor = "#00FF00";
-		document.getElementById("8").style.backgroundColor = "#00FF00";
-		document.getElementById("9").style.backgroundColor = "#00FF00";
-		restart();
-		console.log ('win ' + hod);
-	} 
-	
-	//Вертикально
-	if ((document.getElementById('1').value == document.getElementById('4').value) && (document.getElementById('1').value == document.getElementById('7').value) && document.getElementById('1').value != '' && document.getElementById('4').value != '' && document.getElementById('7').value != '')
-	{
-		document.getElementById("1").style.backgroundColor = "#00FF00";
-		document.getElementById("4").style.backgroundColor = "#00FF00";
-		document.getElementById("7").style.backgroundColor = "#00FF00";
-		restart();
-		console.log ('win ' + hod);
-	} 
-	
-	if ((document.getElementById('2').value == document.getElementById('5').value) && (document.getElementById('2').value == document.getElementById('8').value) && document.getElementById('2').value != '' && document.getElementById('5').value != '' && document.getElementById('8').value != '')
-	{
-		document.getElementById("2").style.backgroundColor = "#00FF00";
-		document.getElementById("5").style.backgroundColor = "#00FF00";
-		document.getElementById("8").style.backgroundColor = "#00FF00";
-		restart();
-		console.log ('win ' + hod);
-	} 
-	
-	if ((document.getElementById('3').value == document.getElementById('6').value) && (document.getElementById('3').value == document.getElementById('9').value) && document.getElementById('3').value != '' && document.getElementById('6').value != '' && document.getElementById('9').value != '')
-	{
-		document.getElementById("3").style.backgroundColor = "#00FF00";
-		document.getElementById("6").style.backgroundColor = "#00FF00";
-		document.getElementById("9").style.backgroundColor = "#00FF00";
-		restart();
-		console.log ('win ' + hod);
-	} 
-	
-	//Крест
-	if ((document.getElementById('1').value == document.getElementById('5').value) && (document.getElementById('1').value == document.getElementById('9').value) && document.getElementById('1').value != '' && document.getElementById('5').value != '' && document.getElementById('9').value != '')
-	{
-		document.getElementById("1").style.backgroundColor = "#00FF00";
-		document.getElementById("5").style.backgroundColor = "#00FF00";
-		document.getElementById("9").style.backgroundColor = "#00FF00";
-		restart();
-		console.log ('win ' + hod);
-		
-	} 
-	if ((document.getElementById('3').value == document.getElementById('5').value) && (document.getElementById('3').value == document.getElementById('7').value) && document.getElementById('3').value != '' && document.getElementById('5').value != '' && document.getElementById('7').value != '')
-	{
-		document.getElementById("3").style.backgroundColor = "#00FF00";
-		document.getElementById("5").style.backgroundColor = "#00FF00";
-		document.getElementById("7").style.backgroundColor = "#00FF00";
-		restart();
-		console.log ('win ' + hod);
-	} 
-  }
-</script>
-
+<input class="tab_em" id = "7" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<input class="tab_em" id = "8" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+<input class="tab_em" id = "9" type = "text" size ="5" style="background-color: #F0E68C" onkeyup="change(event, this)">
+</div>
+<div class = "hoded">
+	<h1 id="Hodit">Ходит <div class="hod2" id="min"> o </div> </h1>
 </div>
 
-
+<a class="btn" href="#" onclick="restart()">Restart</a>
